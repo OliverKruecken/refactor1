@@ -11,6 +11,10 @@ public class ArticleService {
   public Article searchByTitle(String name) {
     List<Article> all = articleRepository.findAll();
 
+    if (name == null) {
+      return null;
+    }
+
     boolean found = false;
     int i = 0;
     while (i < all.size() && !found) {
