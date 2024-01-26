@@ -6,10 +6,10 @@ import java.util.List;
 
 @Service
 public class ArticleService {
-  private final ArticleRepository articleRepository = new ArticleRepository();
+  private final ArticleRepository articleRepositoryMem = new ArticleRepositoryMem();
 
   public Article searchByTitle(String name) {
-    List<Article> all = articleRepository.findAll();
+    List<Article> all = articleRepositoryMem.findAll();
 
     if (name == null) {
       return null;
